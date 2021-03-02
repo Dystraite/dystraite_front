@@ -10,6 +10,6 @@ export class User {
     zipcode: number
     password: string
     role: string
-    photo: any
+    profilePicture: any
     speechtherapist: User
 }

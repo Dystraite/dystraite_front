@@ -62,6 +62,16 @@ export class UserService {
       map((res: User) => res));
   }
 
+  singUp(user: User, redirectUrl: any[]) {
+    this.httpService.post<any>(environment.apiUrl + '/user/sign-up', { user }).subscribe(response => {
+      /*localStorage.setItem(tokenKey, response.token);
+      this.loggedUser = response.user;*/
+    console.log(2, response);
+      this.route.navigate(redirectUrl);
+    });
+    
+  }
+
   // Need backup implementation
 
   /*

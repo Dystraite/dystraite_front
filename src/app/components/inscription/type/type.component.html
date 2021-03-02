@@ -5,26 +5,28 @@
         <p *ngIf="!ortho">Remplissez les champs suivants pour créer votre compte utilisateur</p>
         <p *ngIf="ortho">Remplissez les champs suivants pour créer votre compte orthophoniste</p>
     </div>
-    <div class="block align-left">
-        <label for="nom">Nom et prénom*</label>
-        <input placeholder="Entrez votre nom et prénom..." id="nom" type="text" class="validate">
-    </div>
-    <div class="block align-left">
-        <label for="email">Adresse email*</label>
-        <input placeholder="Entrez votre adresse email..." id="email" type="email" class="validate">
-    </div>
-    <div class="block align-left">
-        <label for="motdepasse">Mot de passe*</label>
-        <input placeholder="Entrez votre mot de passe..." id="motdepasse" type="password" class="validate">
-    </div>
-    <div class="block align-left">
-        <label for="ville">Ville*</label>
-        <input placeholder="Entrez votre ville..." id="ville" type="text" class="validate">
-    </div>
-    <div class="action">
-        <a class="button bg-rose large" [routerLink]="['verif-mail']">
-            <span>Confirmez votre email</span>
-            <i class="material-icons">arrow_forward</i>
-        </a>
-    </div>
+    <form class="input" action="" mode="ios" [formGroup]="registerForm" (ngSubmit)="singUp()">
+        <div class="block align-left">
+            <label for="nom">Nom et prénom*</label>
+            <input placeholder="Entrez votre nom et prénom..." id="nom" type="text" class="validate" formControlName="nom">
+        </div>
+        <div class="block align-left">
+            <label for="email">Adresse email*</label>
+            <input placeholder="Entrez votre adresse email..." id="email" type="email" class="validate" formControlName="email">
+        </div>
+        <div class="block align-left">
+            <label for="motdepasse">Mot de passe*</label>
+            <input placeholder="Entrez votre mot de passe..." id="motdepasse" type="password" class="validate" formControlName="motdepasse">
+        </div>
+        <div class="block align-left">
+            <label for="ville">Ville*</label>
+            <input placeholder="Entrez votre ville..." id="ville" type="text" class="validate" formControlName="ville">
+        </div>
+        <div class="action">
+            <button class="button bg-rose large" type="submit">
+                <span>Confirmez votre email</span>
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </div>
+    </form>
 </div>
