@@ -58,7 +58,7 @@ export class UserService {
     this.loggedUser = null;
   }
   loadLoggedUser() {
-    return this.httpService.get(this.REST_API_SERVER + "loggedUser").pipe(
+    return this.httpService.get(this.REST_API_SERVER + "/user/loggedUser").pipe(
       map((res: User) => res));
   }
 
@@ -66,7 +66,7 @@ export class UserService {
     this.httpService.post<any>(environment.apiUrl + '/user/sign-up', { user }).subscribe(response => {
       /*localStorage.setItem(tokenKey, response.token);
       this.loggedUser = response.user;*/
-    console.log(2, response);
+      console.log(2, response);
       this.route.navigate(redirectUrl);
     });
     
